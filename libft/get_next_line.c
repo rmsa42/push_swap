@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rui <rui@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:05:47 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/06 14:19:14 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/08/04 18:55:35 by rui              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char	*delete_line(char *nw_line)
 	int		j;
 	char	*left;
 
+	i = 0;
+	while (nw_line[i] != '\n' && nw_line[i])
+		i++;
 	if (nw_line[0] == '\0')
 	{
 		free(nw_line);
 		return (NULL);
 	}
-	i = 0;
-	while (nw_line[i] != '\n' && nw_line[i])
-		i++;
 	left = (char *)malloc((ft_strlen(nw_line) - i + 1) * sizeof(char));
 	if (left == NULL)
 		return (NULL);
@@ -120,15 +120,14 @@ char	*get_next_line(int fd)
 	int		fd;
 	char	*a;
 
-	fd = open ("/nfs/homes/rumachad/42Curso/get_next_line/test.txt", O_RDWR);
-	while (i < 8)
-	{
-		a = get_next_line(fd);
-		printf("%s", a);
-		free(a);
-		i++;
-	}
-	close (fd);
+	fd = open ("/home/rui/Desktop/42-Curso/push_swap/libft/test.txt", O_RDWR);
+	a = get_next_line(fd);
+	printf("%s", a);
+	free(a);
+	a = get_next_line(fd);
+	printf("%s", a);
+	free(a);
+	close(fd);
 } */
 
 /* int main()

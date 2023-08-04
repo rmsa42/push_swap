@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rui <rui@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 10:04:23 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/27 10:36:48 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/08/04 19:11:23 by rui              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	check_moves_2(t_node **a, t_node **b, char *line)
+void	check_moves_2(t_node **a, t_node **b, char *line, int *flag)
 {
 	if (line[2] == '\n')
 		rr(a, b, 0);
@@ -23,9 +23,11 @@ void	check_moves_2(t_node **a, t_node **b, char *line)
 		rrotate_b(b, 1);
 	else if (line[2] == 'r' && line[3] == '\n')
 		rrr(a, b, 0);
+	else
+		*flag = 1;
 }
 
-void	check_moves(t_node **a, t_node **b, char *line)
+void	check_moves(t_node **a, t_node **b, char *line, int *flag)
 {
 	if (line[0] == 's' && line[1] == 'a' && line[2] == '\n')
 		swap_a(*a, 1);
@@ -42,26 +44,34 @@ void	check_moves(t_node **a, t_node **b, char *line)
 	else if (line[0] == 'r' && line[1] == 'b' && line[2] == '\n')
 		rotate_b(b, 1);
 	else if (line[0] == 'r' && line[1] == 'r')
-		check_moves_2(a, b, line);
+		check_moves_2(a, b, line, flag);
 	else
-		free_list(a, 1);
+		*flag = 1;
 }
 
 void	read_move(t_node **a, t_node **b)
 {
 	char	*line;
+	int		flag;
 
+	flag = 0;
 	line = get_next_line(0);
 	while (line)
 	{
-		check_moves(a, b, line);
+		check_moves(a, b, line, &flag);
 		free(line);
 		line = get_next_line(0);
 	}
-	if (check_sort(*a) == 0 && *b == NULL)
+	if (flag == 1)
+		free_list(a, 1);
+	else if (check_sort(*a) == 0 && *b == NULL)
 		write(1, "OK\n", 3);
 	else
+	{
+		if ((*b) != NULL)
+			free_list(b, 0);
 		write(1, "KO\n", 3);
+	}
 }
 
 void	quote_arg(t_node *a, t_node *b, char *argv[])
@@ -88,8 +98,6 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc == 1)
 		return (0);
-	else if (argv[1][0] == '\0')
-		error();
 	else if (argc == 2 && ft_strchr(argv[1], ' '))
 		quote_arg(a, b, argv);
 	check_args(argv, 1);

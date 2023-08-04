@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rui <rui@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:19:18 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/12 11:05:55 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/08/04 19:12:32 by rui              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rotate_a(t_node **a, int i)
 	t_node	*temp;
 	t_node	*head;
 
-	if (a != NULL)
+	if (*a != NULL)
 	{
 		head = *a;
 		temp = *a;
@@ -38,7 +38,7 @@ void	rotate_b(t_node **b, int i)
 	t_node	*temp;
 	t_node	*head;
 
-	if (b != NULL)
+	if (*b != NULL)
 	{
 		head = *b;
 		temp = *b;
@@ -57,7 +57,7 @@ void	rrotate_a(t_node **a, int i)
 {
 	t_node	*temp;
 
-	if (a != NULL)
+	if (*a != NULL)
 	{
 		temp = *a;
 		while (temp->next->next != NULL)
@@ -74,7 +74,7 @@ void	rrotate_b(t_node **b, int i)
 {
 	t_node	*temp;
 
-	if (b != NULL)
+	if (*b != NULL)
 	{
 		temp = *b;
 		while (temp->next->next != NULL)

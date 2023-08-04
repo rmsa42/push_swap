@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rui <rui@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 11:44:38 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/31 10:30:43 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/08/04 19:11:51 by rui              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc == 1)
 		return (0);
-	else if (argv[1][0] == '\0')
-		error();
 	if (argc == 2 && ft_strchr(argv[1], ' '))
 		quote_arg(a, b, argv, argc);
 	check_args(argv, 1);
