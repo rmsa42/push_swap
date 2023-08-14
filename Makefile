@@ -6,7 +6,7 @@
 #    By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 10:56:36 by rumachad          #+#    #+#              #
-#    Updated: 2023/07/27 11:29:34 by rumachad         ###   ########.fr        #
+#    Updated: 2023/08/08 10:39:35 by rumachad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,5 +54,3 @@ bonus:	${OBJS_BONUS}
 		cp ${LIBFT_PATH} ${NAME}
 		ar rcs ${NAME} ${OBJS_BONUS}
 		${CC} ${CFLAGS} ${OBJS_BONUS} ${NAME} -o checker
-
-.SILENT:
