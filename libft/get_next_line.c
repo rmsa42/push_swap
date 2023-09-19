@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rui <rui@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:05:47 by rumachad          #+#    #+#             */
-/*   Updated: 2023/08/04 18:55:35 by rui              ###   ########.fr       */
+/*   Updated: 2023/09/19 14:51:51 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <fcntl.h>
+
+int	*check_left(char *left, char *nw_line)
+{
+	if (left[0] == '\0')
+	{
+		free(nw_line);
+		free(left);
+	}
+	return (NULL);
+}
 
 char	*delete_line(char *nw_line)
 {
@@ -19,10 +29,11 @@ char	*delete_line(char *nw_line)
 	int		j;
 	char	*left;
 
+	j = 0;
 	i = 0;
 	while (nw_line[i] != '\n' && nw_line[i])
 		i++;
-	if (nw_line[0] == '\0')
+	if (nw_line[0] == '\0' || !nw_line)
 	{
 		free(nw_line);
 		return (NULL);
@@ -30,12 +41,13 @@ char	*delete_line(char *nw_line)
 	left = (char *)malloc((ft_strlen(nw_line) - i + 1) * sizeof(char));
 	if (left == NULL)
 		return (NULL);
-	j = 0;
 	if (nw_line[i] == '\n')
 		i++;
 	while (nw_line[i] != '\0')
 		left[j++] = nw_line[i++];
 	left[j] = '\0';
+	if (check_left(left, nw_line) == NULL)
+		return (NULL);
 	free(nw_line);
 	return (left);
 }
@@ -113,33 +125,3 @@ char	*get_next_line(int fd)
 		}
 	}
 }
-
-/* int main()
-{
-	int		i = 0;
-	int		fd;
-	char	*a;
-
-	fd = open ("/home/rui/Desktop/42-Curso/push_swap/libft/test.txt", O_RDWR);
-	a = get_next_line(fd);
-	printf("%s", a);
-	free(a);
-	a = get_next_line(fd);
-	printf("%s", a);
-	free(a);
-	close(fd);
-} */
-
-/* int main()
-{
-	int i = 0;
-	char *a;
-	
-	while (i < 2)
-	{
-		a = get_next_line(0);
-		printf("Function output: %s", a);
-		free(a);
-		i++;
-	}
-} */

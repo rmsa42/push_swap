@@ -6,14 +6,14 @@
 #    By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 10:56:36 by rumachad          #+#    #+#              #
-#    Updated: 2023/09/19 13:18:21 by rumachad         ###   ########.fr        #
+#    Updated: 2023/09/19 14:52:33 by rumachad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SRC_BONUS = src_bonus/checker.c src_bonus/movements_bonus.c src_bonus/movements2_bonus.c \
 			src_bonus/movements3_bonus.c src_bonus/ps_errors_bonus.c src_bonus/ps_checks_bonus.c \
-			src_bonus/ps_list_utils_bonus.c src_bonus/ps_sort_utils_bonus.c
+			src_bonus/ps_list_utils_bonus.c src_bonus/ps_sort_utils_bonus.c src_bonus/checker_utils.c
 SRC = src/push_swap.c src/movements.c src/movements2.c \
 		src/movements3.c src/ps_list_utils.c src/ps_sort_utils.c \
 		src/ps_sort_five.c src/ps_sort_big.c src/ps_strat.c \

@@ -6,7 +6,7 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:51:11 by rumachad          #+#    #+#             */
-/*   Updated: 2023/09/19 13:06:14 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:52:02 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void		put_all_a(t_node **a, t_node **b);
 int			mv_calcs(t_info_a info_a, t_info_b info_b);
 t_nbr_info	a_nbr2move(t_node *a, t_node *b, t_info_a info_a);
 t_nbr_info	b_target(t_node *b, int data_a);
+void		check_error(t_node **a, t_node **b);
 
 #endif
