@@ -6,34 +6,34 @@
 #    By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 10:56:36 by rumachad          #+#    #+#              #
-#    Updated: 2023/08/08 10:39:35 by rumachad         ###   ########.fr        #
+#    Updated: 2023/09/19 13:18:21 by rumachad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
-SRC_BONUS = checker.c movements.c movements2.c \
-			movements3.c ps_errors.c ps_checks.c \
-			ps_list_utils.c ps_sort_utils.c
-SRC = push_swap.c movements.c movements2.c \
-		movements3.c ps_list_utils.c ps_sort_utils.c \
-		ps_sort_five.c ps_sort_big.c ps_strat.c \
-		ps_sort_three.c ps_strat2.c ps_errors.c \
-		ps_sort_big2.c ps_sort_big3.c ps_checks.c
+NAME = push_swap
+SRC_BONUS = src_bonus/checker.c src_bonus/movements_bonus.c src_bonus/movements2_bonus.c \
+			src_bonus/movements3_bonus.c src_bonus/ps_errors_bonus.c src_bonus/ps_checks_bonus.c \
+			src_bonus/ps_list_utils_bonus.c src_bonus/ps_sort_utils_bonus.c
+SRC = src/push_swap.c src/movements.c src/movements2.c \
+		src/movements3.c src/ps_list_utils.c src/ps_sort_utils.c \
+		src/ps_sort_five.c src/ps_sort_big.c src/ps_strat.c \
+		src/ps_sort_three.c src/ps_strat2.c src/ps_errors.c \
+		src/ps_sort_big2.c src/ps_sort_big3.c src/ps_checks.c
 LIBFT_DIR = libft
 LIBFT_PATH = ${LIBFT_DIR}/libft.a
 OBJS_BONUS = ${SRC_BONUS:.c=.o}
 OBJS = ${SRC:.c=.o}
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I include
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 			make -C ${LIBFT_DIR}
-			cp ${LIBFT_PATH} ${NAME}
-			ar rcs ${NAME} ${OBJS}
-			${CC} ${CFLAGS} ${NAME} -o push_swap
+			cp ${LIBFT_PATH} push_swap.a
+			ar rcs push_swap.a ${OBJS}
+			${CC} ${CFLAGS} push_swap.a -o ${NAME}
 
 all:	${NAME} bonus
 
@@ -44,13 +44,13 @@ clean:
 
 fclean: clean
 		make fclean -C ${LIBFT_DIR}
-		${RM} ${NAME} push_swap
+		${RM} ${NAME} push_swap.a
 		${RM} checker
 
 re:	clean all
 
 bonus:	${OBJS_BONUS}
 		make -C ${LIBFT_DIR}
-		cp ${LIBFT_PATH} ${NAME}
-		ar rcs ${NAME} ${OBJS_BONUS}
-		${CC} ${CFLAGS} ${OBJS_BONUS} ${NAME} -o checker
+		cp ${LIBFT_PATH} push_swap.a
+		ar rcs push_swap.a ${OBJS_BONUS}
+		${CC} ${CFLAGS} push_swap.a -o checker

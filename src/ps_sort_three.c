@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:29:00 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/12 10:39:41 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:56 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	top_min(t_node **a)

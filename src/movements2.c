@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:19:18 by rumachad          #+#    #+#             */
-/*   Updated: 2023/08/14 12:20:03 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:23 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	rotate_a(t_node **a, int i)

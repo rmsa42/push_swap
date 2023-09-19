@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:25:10 by rumachad          #+#    #+#             */
-/*   Updated: 2023/09/04 14:49:13 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:05:58 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 t_node	*swap_a(t_node *a, int i)

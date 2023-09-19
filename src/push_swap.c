@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 11:44:38 by rumachad          #+#    #+#             */
-/*   Updated: 2023/08/14 10:39:09 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:07:08 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	which_sort(t_node **a, t_node **b)

@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 16:19:21 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/13 15:44:14 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:50 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	sort_min_max(t_node **a, t_node **b, int size)

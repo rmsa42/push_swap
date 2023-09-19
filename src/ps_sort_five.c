@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:29:43 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/13 15:04:32 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:53 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	top_four(t_node **a, t_node **b, int i)

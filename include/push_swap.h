@@ -6,12 +6,14 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:51:11 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/27 12:33:01 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:14 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "../libft/libft.h"
 
 typedef struct node
 {

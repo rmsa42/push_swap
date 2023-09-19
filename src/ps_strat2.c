@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:36:22 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/27 10:49:56 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:07:04 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 int	mv_calc1(t_info_a info_a, t_info_b info_b)

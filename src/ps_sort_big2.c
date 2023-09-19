@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:47:41 by rumachad          #+#    #+#             */
-/*   Updated: 2023/08/08 12:54:51 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:47 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	a_top(t_node **a, t_nbr_info nbr2sort)

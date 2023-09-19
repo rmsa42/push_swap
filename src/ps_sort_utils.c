@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_errors.c                                        :+:      :+:    :+:   */
+/*   ps_sort_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 11:00:02 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/27 10:11:14 by rumachad         ###   ########.fr       */
+/*   Created: 2023/06/20 16:20:08 by rumachad          #+#    #+#             */
+/*   Updated: 2023/09/19 13:06:59 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
-void	error(void)
+int	max(t_node *list)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	int	max;
 
-void	free_list(t_node **lst, int i)
-{
-	t_node	*temp;
-
-	while (*lst != NULL)
+	max = list->data;
+	while (list != NULL)
 	{
-		temp = *lst;
-		*lst = (*lst)->next;
-		free(temp);
+		if (list->data > max)
+			max = list->data;
+		list = list->next;
 	}
-	if (i == 1)
-		error();
+	return (max);
 }
 
-void	free_array_ps(char *array[], int flag)
+int	min(t_node *list)
 {
-	int	i;
+	int	min;
 
-	i = 0;
-	while (array[i])
-		free(array[i++]);
-	free(array);
-	if (flag == 1)
-		error();
+	min = list->data;
+	while (list != NULL)
+	{
+		if (list->data < min)
+			min = list->data;
+		list = list->next;
+	}
+	return (min);
 }

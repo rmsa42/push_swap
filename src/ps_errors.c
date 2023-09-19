@@ -1,22 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements3.c                                       :+:      :+:    :+:   */
+/*   ps_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 12:52:05 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/12 11:06:03 by rumachad         ###   ########.fr       */
+/*   Created: 2023/07/04 11:00:02 by rumachad          #+#    #+#             */
+/*   Updated: 2023/09/19 13:06:30 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
-void	rrr(t_node **a, t_node **b, int i)
+void	error(void)
 {
-	rrotate_a(a, 1);
-	rrotate_b(b, 1);
-	if (i != 0)
-		ft_printf("rrr\n");
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	free_list(t_node **lst, int i)
+{
+	t_node	*temp;
+
+	while (*lst != NULL)
+	{
+		temp = *lst;
+		*lst = (*lst)->next;
+		free(temp);
+	}
+	if (i == 1)
+		error();
+}
+
+void	free_array_ps(char *array[], int flag)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+		free(array[i++]);
+	free(array);
+	if (flag == 1)
+		error();
 }

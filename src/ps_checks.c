@@ -6,11 +6,10 @@
 /*   By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 10:07:19 by rumachad          #+#    #+#             */
-/*   Updated: 2023/07/27 11:03:37 by rumachad         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:06:28 by rumachad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	check_args(char *argv[], int flag)
