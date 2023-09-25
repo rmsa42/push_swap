@@ -6,7 +6,7 @@
 #    By: rumachad <rumachad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 10:56:36 by rumachad          #+#    #+#              #
-#    Updated: 2023/09/19 14:52:33 by rumachad         ###   ########.fr        #
+#    Updated: 2023/09/25 11:31:03 by rumachad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,3 +54,8 @@ bonus:	${OBJS_BONUS}
 		cp ${LIBFT_PATH} push_swap.a
 		ar rcs push_swap.a ${OBJS_BONUS}
 		${CC} ${CFLAGS} push_swap.a -o checker
+
+test:	
+		@shuf -i 1-100 > nbr.txt
+		valgrind ./push_swap `cat nbr.txt`
+		rm -f nbr.txt
