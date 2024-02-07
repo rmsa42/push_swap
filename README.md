@@ -87,6 +87,38 @@ pb
 ## Algorithm
 Here's an explanation about the algorithm that used in my push_swap.
 
+### Size 2
+If the stack is sorted, it does nothing.
+
+If the stack is not sorted, a simple `sa` sorts the stack.
+
+### Size 3
+1. The `sort_three()` searchs for the minimum number in the stack `a`.
+2. Then, the `sort_three()`, sees the position of the minimum number in the stack `a`.
+    - If the minimum number is in the `top` of the stack `a`, the `top_min()` is called.
+    - If the minimun number is in the `middle` of the stack `a`, the `middle_min()` is called.
+    - If the minum number is in the `bottom` of the stack `a`, the `last_min()` is called.
+3. Now the stack `a` will be sorted with operations like `sa`, `ra` and `rra`.
+
+### Size 5
+1. The `sort_five()` obtains the position of the minimum number, with `target()`, in the stack `a`.
+2. Then, `sort_five()`, moves the minimum number to the top of the stack `a`.
+3. Now, `sort_five()` does a `pb` operation, to push the minimum number to the top of the stack `b`. 
+4. Repeats `step 1, 2 and 3` until the stack `a` has only 3 elemnts.
+5. With only 3 elements, `sort_five()` calls `sort_three()`.
+6. Now with the stack `a` sorted, `sort_five()` does a `pa` operation, to push the 2º minimum number (2º lowest off the five numbers) to the top of the stack `a`.
+7. Repeats `step 6`, to push the 1º minimum number (lowest of the 5 numbers) to the top of the stack `a`.
+
+### Size >5
+1. The `sort_hundred()` is called, and does two `pb` operations.
+2. Then, `sort_hundred()` will do its algorithm until the stack the `a` has only 3 elemnts.
+    - The `a_nbr2move()` calculates the best number to push to the stack `b` and returns it. (best number == least operations). To calculate the best number, the `mv_calcs()` will measure how many operations are needed to put the number of the stack `a` in the stack `b`, sorting it descending. The `mv_calcs()` is done in all numbers in stack `a`.
+    - The `b_target()` calculates the number that has to be on the top of the stack `b`, when pushing `a_nbr2move()` return value, and returns it.
+    - The `sort()` will put the two numbers on the top of the respective stack and then it does a `pb`.
+    - Repeat until stack `a` has only 3 elements.
+3. With 3 elements in stack `a`, it calls `sort_three()`.
+4. Now, the `put_all_a()` is called, emptying stack `b` and filling stack `a`.
+5. Then rotating stack `a` will sort the stack.
 
 ## Contributing
 I welcome contributions. If you have any bug fix or improvement, feel free to submit a pull request on the repository.
