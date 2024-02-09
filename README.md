@@ -125,7 +125,7 @@ Here's an example of how `sort_hundred()` works:
 4                                                                                                                                                                                  3                 1
 1                                                                                                                                                                   4              4                 2
 7                7                                                                                                                            7                     5              5                 3
-3      step 1    3      step 2    3     rrb, pb '3'          ra, pb '2'      2   step 3       2   step 4             pb     1      rra, pb    8     rra, rra, pb    6       pb     6      step 5     4
+3      step 1    3      step 2    3     rrb, pb '3'          rr, pb '2'      2   step 3       2   step 4             pa     1      rra, pa    8     rra, rra, pa    6       pa     6      step 5     4
 8     ------->   8     ------->   8     ---------->   8  3  ----------->     1  ------->      1  ------->   2  1  ------->  2     --------->  1     ------------->  7     ------>  7     --------->  5
 2                2                2  7                2  1                5  7             5  7             5  7            5  7              2                     8              8                 6
 5                5  1             5  4                5  7                6  4             6  4             6  4            6  4              5  4                  1              1                 7
